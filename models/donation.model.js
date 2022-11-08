@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 
-const c = new Schema(
+const DonationSchema = new Schema(
   {
     userId: {
       type: String,
@@ -26,4 +26,4 @@ const c = new Schema(
   },
 );
 
-export const Donation = mongoose.model("Donation", LocationSchema);
+export const Donation = mongoose.model("Donation", DonationSchema);

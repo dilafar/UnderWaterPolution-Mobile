@@ -60,10 +60,10 @@ export const getDonationByUserIdService = async (id) => {
 };
 
 export const getDonationByIdService = async (id) => {
-  try{
+  try {
     const donation = await getDonationById(id);
     return Promise.resolve(donation);
   } catch (err) {
     throw new AppError(err.message, err.status);
   }
-}
+};
