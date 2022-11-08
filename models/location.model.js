@@ -21,7 +21,7 @@ const LocationSchema = new Schema(
       required: true,
     },
     interested: {
-      type: String,
+      type: Number,
       defaultValue: 0,
       required: true,
     },
@@ -31,8 +31,8 @@ const LocationSchema = new Schema(
     },
     userId: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   {
     timestamps: true,

@@ -18,7 +18,7 @@ export const saveLocationService = async (data, userId) => {
       description,
       interested,
       imageURL,
-      userId
+      userId,
     });
     return Promise.resolve(loc);
   } catch (err) {
@@ -63,10 +63,10 @@ export const getLocationByUserIdService = async (id) => {
 };
 
 export const getLocationByIdService = async (id) => {
-  try{
+  try {
     const loc = await getLocationById(id);
     return Promise.resolve(loc);
   } catch (err) {
     throw new AppError(err.message, err.status);
   }
-}
+};

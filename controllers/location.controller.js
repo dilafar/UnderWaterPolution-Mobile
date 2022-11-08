@@ -63,4 +63,3 @@ export const getLocationByIdController = async (req, res) => {
     res.status(err.status).json(err.message);
   }
 };
-
