@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 
-const EventSchema = new Schema(
+const ArticleSchema = new Schema(
   {
     title: {
       type: String,
@@ -16,14 +16,7 @@ const EventSchema = new Schema(
       type: Date,
       required: true,
     },
-    startTime: {
-      type: String,
-      required: true,
-    },
-    endTime: {
-      type: String,
-      required: true,
-    },
+
     tag: {
       type: String,
       required: true,
@@ -48,4 +41,4 @@ const EventSchema = new Schema(
   { versionKey: false },
 );
 
-export const Event = mongoose.model("Event", EventSchema);
+export const Article = mongoose.model("Article", ArticleSchema);

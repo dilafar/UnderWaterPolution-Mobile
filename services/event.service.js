@@ -7,7 +7,17 @@ import {
 import AppError from "../utils/appError.js";
 
 export const saveEventService = async (data) => {
-  const { title, description, date, startTime, endTime, tag, image } = data;
+  const {
+    title,
+    description,
+    date,
+    startTime,
+    endTime,
+    tag,
+    venue,
+    image,
+    status,
+  } = data;
   try {
     const event = await saveEvent({
       title,
@@ -16,7 +26,10 @@ export const saveEventService = async (data) => {
       startTime,
       endTime,
       tag,
+      venue,
       image,
+      status,
+      rejectNote: "Reject Note",
     });
     return Promise.resolve(event);
   } catch (err) {

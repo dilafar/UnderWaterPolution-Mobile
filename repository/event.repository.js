@@ -42,3 +42,39 @@ export const getEvents = () =>
     .catch(() => {
       throw new AppError("Internal server error.", 500);
     });
+
+export const getApprovedEvents = () =>
+  Event.find({ status: "Approved" })
+    .then((events) => {
+      return Promise.resolve(events);
+    })
+    .catch(() => {
+      throw new AppError("Internal server error.", 500);
+    });
+
+export const getPendingEvents = () =>
+  Event.find({ status: "Pending" })
+    .then((events) => {
+      return Promise.resolve(events);
+    })
+    .catch(() => {
+      throw new AppError("Internal server error.", 500);
+    });
+
+export const getEventsforVolunteers = () =>
+  Event.find({
+    $or: [
+      {
+        status: "Pending",
+      },
+      {
+        status: "Rejected",
+      },
+    ],
+  })
+    .then((events) => {
+      return Promise.resolve(events);
+    })
+    .catch(() => {
+      throw new AppError("Internal server error.", 500);
+    });
