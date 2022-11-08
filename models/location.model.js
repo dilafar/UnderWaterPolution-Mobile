@@ -21,7 +21,7 @@ const LocationSchema = new Schema(
       required: true,
     },
     interested: {
-      type: String,
+      type: Number,
       defaultValue: 0,
       required: true,
     },

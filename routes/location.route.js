@@ -17,4 +17,4 @@ locationRouter.get("/manager", getLocationByUserIdController);
 locationRouter.get("/:id", getLocationByIdController);
 locationRouter.get("/", getLocationController);
 
-export default eventRouter;
+export default locationRouter;
