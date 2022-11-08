@@ -3,6 +3,9 @@ import {
   updateEvent,
   deleteEvent,
   getEvents,
+  getPendingEvents,
+  getApprovedEvents,
+  getEventsforVolunteers,
 } from "../repository/index.js";
 import AppError from "../utils/appError.js";
 
@@ -58,6 +61,33 @@ export const deleteEventService = async (id) => {
 export const getEventsService = async () => {
   try {
     const events = await getEvents();
+    return Promise.resolve(events);
+  } catch (err) {
+    throw new AppError(err.message, err.status);
+  }
+};
+
+export const getPendingEventsService = async () => {
+  try {
+    const events = await getPendingEvents();
+    return Promise.resolve(events);
+  } catch (err) {
+    throw new AppError(err.message, err.status);
+  }
+};
+
+export const getApprovedEventsService = async () => {
+  try {
+    const events = await getApprovedEvents();
+    return Promise.resolve(events);
+  } catch (err) {
+    throw new AppError(err.message, err.status);
+  }
+};
+
+export const getEventsforVolunteersService = async () => {
+  try {
+    const events = await getEventsforVolunteers();
     return Promise.resolve(events);
   } catch (err) {
     throw new AppError(err.message, err.status);
