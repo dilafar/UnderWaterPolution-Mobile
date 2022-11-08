@@ -3,6 +3,9 @@ import {
   updateEventService,
   deleteEventService,
   getEventsService,
+  getPendingEventsService,
+  getApprovedEventsService,
+  getEventsforVolunteersService,
 } from "../services/index.js";
 import Success from "../utils/success.js";
 
@@ -36,6 +39,33 @@ export const deleteEventController = async (req, res) => {
 export const getEventsController = async (req, res) => {
   try {
     const events = await getEventsService();
+    res.json(Success(events, "Successfully Fetched Events Details."));
+  } catch (err) {
+    res.status(err.status).json(err.message);
+  }
+};
+
+export const getPendingEventsController = async (req, res) => {
+  try {
+    const events = await getPendingEventsService();
+    res.json(Success(events, "Successfully Fetched Events Details."));
+  } catch (err) {
+    res.status(err.status).json(err.message);
+  }
+};
+
+export const getApprovedEventsController = async (req, res) => {
+  try {
+    const events = await getApprovedEventsService();
+    res.json(Success(events, "Successfully Fetched Events Details."));
+  } catch (err) {
+    res.status(err.status).json(err.message);
+  }
+};
+
+export const getEventsforVolunteersController = async (req, res) => {
+  try {
+    const events = await getEventsforVolunteersService();
     res.json(Success(events, "Successfully Fetched Events Details."));
   } catch (err) {
     res.status(err.status).json(err.message);
