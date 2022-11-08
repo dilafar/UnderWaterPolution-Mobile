@@ -1,5 +1,5 @@
-# children-cloud-backend
-This project is to create a web application backend for daycare centers to facilitate and manage their daily work.
+# Under-Water-Polution-Mobile_App-backend
+This project is to create a Mobile application backend for bring a solution through a mobile application for Under water polution.
 
 ## ✨Run Locally
 
