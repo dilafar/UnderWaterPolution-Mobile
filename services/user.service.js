@@ -11,7 +11,8 @@ import {
 import AppError from "../utils/appError.js";
 
 export const save = async (data) => {
-  let { firstName, lastName, email, userName, password, role } = data;
+  let { firstName, lastName, email, userName, department, password, role } =
+    data;
   const userNameObj = { userName };
   try {
     const exUser = await getUser(userNameObj);
@@ -27,6 +28,7 @@ export const save = async (data) => {
       lastName,
       email,
       userName,
+      department,
       password,
       role,
     });
@@ -48,7 +50,7 @@ export const login = async (data) => {
         throw new AppError("Password is incorrect.", 400);
       } else {
         const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
-        return Promise.resolve({ token });
+        return Promise.resolve({ token, user });
       }
     }
   } catch (err) {
